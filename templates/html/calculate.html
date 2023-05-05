@@ -1,0 +1,101 @@
+
+{% extends 'html/index.html' %}
+
+
+{% block content %}
+    <Form method="post" action="{% url 'calculate_page' %}">
+        {% csrf_token %}
+        <h2>Technical Risk</h2>
+        <label>Architectural Complexity: </label>
+        <select name="architectural_complexity" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Software Performance: </label>
+        <select name="software_performance" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Software Scalability: </label>
+        <select name="software_scalability" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Compatibility: </label>
+        <select name="compatibility" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <h2>Project Risk</h2>
+        <label>Budget Constraint: </label>
+        <select name="budget_constraint" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Schedule Constraint: </label>
+        <select name="schedule_constraint" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Scope Constraint: </label>
+        <select name="scope_constraint" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Resource Constraint: </label>
+        <select name="resource_constraint" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <h2>Business Risk</h2>
+        <label>Market Change: </label>
+        <select name="market_change" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Competition</label>
+        <select name="competition" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Regulatory Requirements: </label>
+        <select name="regulatory_requirements" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <h2>Personal Risk</h2>
+        <label>Skill Gaps: </label>
+        <select name="skill_gaps" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Turnover: </label>
+        <select name="turnover" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />
+        <label>Team Communication Issues</label>
+        <select name="team_communication_issues" required>
+            <option value='' >Select an option</option>
+            <option value='yes'>Yes</option>
+            <option value='no'>No</option>
+        </select> <br />    
+        <button onclick="">Calculate</button>
+        <input type="text" name="result" value="{{ output }}" readonly>
+    </Form>
+
+
+{% endblock %}

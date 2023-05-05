@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software Risk Calculator</title>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+  <div class="container">
+    <ul class="nav bg-info">
+      <li class="nav-item">
+        <a class="nav-link link-light" href="#">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link link-light" href="#">MEMBERS</a>
+      </li>
+    </ul>
+
+  </div>
+  <header>
+    <h1> 
+        <a href="{% url 'index_page' %}"> Software Risk Calculator </a>
+    </h1>        
+  </header>
+  <div class="container">
+    <div class="nav-container">
+        <nav>
+            <a href="{% url 'calculate_page' %}">Calculate</a>
+            <a href="{% url 'contribute_page' %}">Contribute</a>
+        </nav>        
+    </div>
+    <div class="content-container">
+        <main>
+            {% block content %}
+            
+            {% endblock %}
+        </main>
+    </div>
+  </div>
+</body>
+</html>

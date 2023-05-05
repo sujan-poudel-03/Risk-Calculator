@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    margin-bottom: 50px;
+  }
+  header {
+    background-color: #ede4e4;
+    margin: 0 25% 0 25%;
+    color: #fff;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 1rem;
+  }
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #7e6f6f;
+    margin: 0 25% 0 25% ;
+    padding-bottom: 20px;
+  }
+  .nav-container {
+      display: flex;
+      background-color: #45be24;
+      margin-top: 20px;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    color: #230505;
+    text-decoration: none;
+    margin-left: 1rem;
+  }
+
+  form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  label {
+      font-size: medium;
+      font-weight: 500;
+  }
+
+  input{
+      width: 500px;
+      height: 30px;
+  }
+
+  select{
+      width: 500px;
+      height: 30px;
+  }
+
+  button {
+      width: 100px;
+      height: 30px;
+      background-color: #45be24;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+  }
+  @media only screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+  }
