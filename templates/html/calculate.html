@@ -3,98 +3,228 @@
 
 
 {% block content %}
-    <Form method="post" action="{% url 'calculate_page' %}">
+    
+    <Form method="post" action="{% url 'calculate_page' %}" class="row">
         {% csrf_token %}
-        <h2>Technical Risk</h2>
-        <label>Architectural Complexity: </label>
-        <select name="architectural_complexity" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Software Performance: </label>
-        <select name="software_performance" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Software Scalability: </label>
-        <select name="software_scalability" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Compatibility: </label>
-        <select name="compatibility" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <h2>Project Risk</h2>
-        <label>Budget Constraint: </label>
-        <select name="budget_constraint" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Schedule Constraint: </label>
-        <select name="schedule_constraint" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Scope Constraint: </label>
-        <select name="scope_constraint" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Resource Constraint: </label>
-        <select name="resource_constraint" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <h2>Business Risk</h2>
-        <label>Market Change: </label>
-        <select name="market_change" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Competition</label>
-        <select name="competition" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Regulatory Requirements: </label>
-        <select name="regulatory_requirements" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <h2>Personal Risk</h2>
-        <label>Skill Gaps: </label>
-        <select name="skill_gaps" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Turnover: </label>
-        <select name="turnover" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />
-        <label>Team Communication Issues</label>
-        <select name="team_communication_issues" required>
-            <option value='' >Select an option</option>
-            <option value='yes'>Yes</option>
-            <option value='no'>No</option>
-        </select> <br />    
-        <button onclick="">Calculate</button>
-        <input type="text" name="result" value="{{ output }}" readonly>
+        <div class="mb-3 row">
+            <h2>Technical Risk</h2>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label class="col-form-label text-right">Architectural Complexity:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="architectural_complexity" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label class="col-form-label">Software Performance:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="software_performance" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>        
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Software Scalability:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="software_scalability" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>         
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Compatibility:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="compatibility" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+        <div class="mb-3 row">
+            <h2>Project Risk</h2>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Budget Constraint:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="budget_constraint" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Schedule Constraint:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="schedule_constraint" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Scope Constraint:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="scope_constraint" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Resource Constraint:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="resource_constraint" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+        <div class="mb-3 row">
+            <h2>Business Risk</h2>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Market Change:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="market_change" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Competition:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="competition" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Regulatory Requirements:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="regulatory_requirements" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+
+        <div class="mb-3 row">
+            <h2>Personal Risk</h2>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Skill Gaps:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="skill_gaps" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Turnover:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="turnover" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4 text-right">
+                <label col-form-label>Team Communication Issues:* </label>
+            </div>
+            <div class="col-sm-4">
+                <select name="team_communication_issues" class="form-select" required>
+                    <option value='' >Select an option</option>
+                    <option value='yes'>Yes</option>
+                    <option value='no'>No</option>
+                </select>                
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="text-center">
+            <button onclick="" class="btn btn-sm bg-success">Calculate</button>
+        </div>
+        <div class="text-center">
+                <input type="text" name="result"  value="{{ output }}" readonly>
+            </div>    
+        </div>
     </Form>
 
 

@@ -136,9 +136,12 @@ def contribute(request):
             team_communication_issues=team_communication_issues
         )
         submission.save()
-        return render(request, 'html/calculate.html')
+        # return render(request, 'html/calculate.html')
     else:
         return render(request, 'html/contribute.html')
+    
+    return render(request, 'html/contribute.html')
+    
 
 def output(input_list):
     # Load the model from the file

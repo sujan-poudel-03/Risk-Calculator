@@ -7,39 +7,128 @@
   <title>Software Risk Calculator</title>
   {% load bootstrap5 %}
   {% bootstrap_css %}
-  {% bootstrap_javascript %}
+  
+  <style>
+    body{
+      background-color: #f5f5f5;
+    }
+    header{
+      background-color: #0577e9;
+      color: rgb(253, 249, 249);
+      text-align: center;
+      padding: 10px;
+    }
+    nav{
+      background-color: #e0e5e9;
+      color: rgb(15, 1, 1);
+      text-align: center;
+      padding: 10px;
+      padding-left: 40px;
+    }
+    ul{
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    li{
+      float: left;
+    }
+    li a{
+      display: block;
+      color: rgb(18, 1, 1);
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    li a:hover{
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    main{
+      background-color: #f5f5f5;
+      color: rgb(15, 1, 1);
+      text-align: center;
+      padding: 10px;
+    }
+    .text-message{
+      height: 70vh;
+      padding: 10px;
+      margin: 10px;
+    }
+    .text-message h1{
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(to bottom, #045882, #220101);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .link-buttons{
+      padding: 10px;
+      margin: 10px;
+    }
+    .btn{
+      background-color: #0577e9;
+      color: rgb(253, 249, 249);
+      text-align: center;
+      padding: 10px;
+      margin: 10px;
+    }
+    .btn:hover{
+      background-color: #e0e5e9;
+      color: rgb(15, 1, 1);
+      text-align: center;
+      padding: 10px;
+      margin: 10px;
+    }
+    footer{
+      background-color: #0577e9;
+      color: rgb(253, 249, 249);
+      text-align: center;
+      padding: 10px;
+      position: relative;
+    }
+    /* Style the footer */
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 1.5rem 0;
+    }
+    
+    footer p {
+      margin: 0;
+    }
+
+  </style>
 </head>
 <body>
-  <div class="container">
-    <ul class="nav bg-info">
-      <li class="nav-item">
-        <a class="nav-link link-light" href="#">HOME</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link link-light" href="#">MEMBERS</a>
-      </li>
-    </ul>
-
-  </div>
   <header>
-    <h1> 
-        <a href="{% url 'index_page' %}"> Software Risk Calculator </a>
-    </h1>        
+    <h4> Software Risk Calculator </h4>
   </header>
-  <div class="container">
-    <div class="nav-container">
-        <nav>
-            <a href="{% url 'calculate_page' %}">Calculate</a>
-            <a href="{% url 'contribute_page' %}">Contribute</a>
-        </nav>        
-    </div>
-    <div class="content-container">
-        <main>
-            {% block content %}
-            
-            {% endblock %}
-        </main>
-    </div>
-  </div>
-</body>
+  <nav>
+    <ul>
+      <li> <a href="{% url 'index_page' %}"> HOME </a> </li>
+      <li> <a href="{% url 'calculate_page' %}"> Calculate </a> </li>
+      <li> <a href="{% url 'contribute_page' %}"> Contribute </a> </li>
+    </ul>
+  </nav>
+  <main>
+    {% block content %}
+    <section class="text-message">
+      <h1> This software risk calculator is built for academic research purpose </h1>
+      <div class="link-buttons">
+        <a href="{% url 'calculate_page' %}" class="btn btn-lg btn-primary mr-3">Try this</a>
+        <a href="{% url 'contribute_page' %}" class="btn btn-lg btn-outline-primary">Contribute here</a>
+      </div>
+    </section>
+    {% endblock %}
+  </main>
+  <footer>
+    <p> Developed by: <i>Gaurav Koirala</i> </p>
+  </footer>
+
+  {% bootstrap_javascript %}
+
+ </body>
 </html>
