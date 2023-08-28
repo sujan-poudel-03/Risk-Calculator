@@ -2,8 +2,9 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import pickle
-from .models import RiskAssessmentData
+from .models import RiskAssessmentData, RiskCalculatorHistory
 from django.http import HttpResponseRedirect
+
 
 def index(request):
     return render(request, 'html/index.html')
@@ -59,8 +60,32 @@ def calculate(request):
         print(input_list)
 
         predicted_output = output(input_list)
+
+        # Save Calculated Data to Database
+        RiskCalculatorHistory.objects.create(
+            architectural_complexity = architectural_complexity,
+            software_performance = software_performance,
+            software_scalability = software_scalability,
+            compatibility = compatibility,
+            budget_constraint = budget_constraint,
+            schedule_constraint = schedule_constraint,
+            scope_constraint = scope_constraint,
+            resource_constraint = resource_constraint,
+            market_change = market_change,
+            competition = competition,
+            regulatory_requirements = regulatory_requirements,
+            skill_gaps = skill_gaps,
+            turnover = turnover,
+            team_communication_issues = team_communication_issues,
+            predicted_output = predicted_output
+        )
+        context = {
+            'user_input': input_dict,
+            'output': predicted_output
+        }
+        print("Data already sent.........")
         
-        return render(request, 'html/calculate.html',{'output': predicted_output})
+        return render(request, 'html/result.html',{'context': context})
     
     return render(request, 'html/calculate.html')
 

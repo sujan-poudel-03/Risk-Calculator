@@ -101,6 +101,17 @@
     }
 
   </style>
+    <!-- Bootstap -->
+    <!-- Include Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Include Bootstrap 5 JavaScript and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
 </head>
 <body>
   <header>
@@ -115,10 +126,12 @@
   </nav>
   <main>
     {% block content %}
-    <section class="text-message">
-      <h1> This software risk calculator is built for academic research purpose </h1>
+    <section class="text-message mt-5 p5">
+      <div class="row">
+        <h1> This software risk calculator is built for academic research purpose </h1>
+      </div>
       <div class="link-buttons">
-        <a href="{% url 'calculate_page' %}" class="btn btn-lg btn-primary mr-3">Try this</a>
+        <a href="{% url 'calculate_page' %}" class="btn btn-lg btn-success mr-3">Try this</a>
         <a href="{% url 'contribute_page' %}" class="btn btn-lg btn-outline-primary">Contribute here</a>
       </div>
     </section>

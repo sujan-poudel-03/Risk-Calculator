@@ -1,5 +1,29 @@
 from django.db import models
 
+
+class RiskCalculatorHistory(models.Model):
+    project_name = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
+    experience = models.CharField(max_length=255, blank=True, null=True)
+    architectural_complexity = models.CharField(max_length=3)
+    software_performance = models.CharField(max_length=3)
+    software_scalability = models.CharField(max_length=3)
+    compatibility = models.CharField(max_length=3)
+    budget_constraint = models.CharField(max_length=3)
+    schedule_constraint = models.CharField(max_length=3)
+    scope_constraint = models.CharField(max_length=3)
+    resource_constraint = models.CharField(max_length=3)
+    market_change = models.CharField(max_length=3)
+    competition = models.CharField(max_length=3)
+    regulatory_requirements = models.CharField(max_length=3)
+    skill_gaps = models.CharField(max_length=3)
+    turnover = models.CharField(max_length=3)
+    team_communication_issues = models.CharField(max_length=3)
+    predicted_output = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.output
+
 # Create your models here.
 YES_NO_CHOICES = (
     ('yes', 'Yes'),
