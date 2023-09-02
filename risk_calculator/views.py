@@ -29,20 +29,20 @@ def calculate(request):
 
     
         input_dict = {
-            'architectural_complexity': architectural_complexity,
-            'software_performance': software_performance,
-            'software_scalability': software_scalability,
-            'compatibility': compatibility,
-            'budget_constraint': budget_constraint,
-            'schedule_constraint': schedule_constraint,
-            'scope_constraint': scope_constraint,
-            'resource_constraint': resource_constraint,
-            'market_change': market_change,
-            'competition': competition,
-            'regulatory_requirements': regulatory_requirements,
-            'skill_gaps': skill_gaps,
-            'turnover': turnover,
-            'team_communication_issues': team_communication_issues,
+            'Architectural Complexity': architectural_complexity,
+            'Software Performance': software_performance,
+            'Software Scalability': software_scalability,
+            'Compatibility': compatibility,
+            'Budget Constraint': budget_constraint,
+            'Schedule Constraint': schedule_constraint,
+            'Scope Constraint': scope_constraint,
+            'Resource Constraint': resource_constraint,
+            'Market Change': market_change,
+            'Competition': competition,
+            'Regulatory Requirements': regulatory_requirements,
+            'Skill Gaps': skill_gaps,
+            'Turnover': turnover,
+            'Team Communication Issues': team_communication_issues,
         }
 
         new_dict = {}
@@ -60,6 +60,7 @@ def calculate(request):
         print(input_list)
 
         predicted_output = output(input_list)
+        print(predicted_output)
 
         # Save Calculated Data to Database
         RiskCalculatorHistory.objects.create(
@@ -79,6 +80,7 @@ def calculate(request):
             team_communication_issues = team_communication_issues,
             predicted_output = predicted_output
         )
+
         context = {
             'user_input': input_dict,
             'output': predicted_output

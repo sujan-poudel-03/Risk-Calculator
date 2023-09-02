@@ -22,7 +22,14 @@ class RiskCalculatorHistory(models.Model):
     predicted_output = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.output
+        if self.project_name and self.email:
+            return f"{self.project_name} - {self.email}"
+        elif self.project_name:
+            return self.project_name
+        elif self.email:
+            return self.email
+        else:
+            return f"Risk Calculator History #{self.id} = output {self.predicted_output}"
 
 # Create your models here.
 YES_NO_CHOICES = (

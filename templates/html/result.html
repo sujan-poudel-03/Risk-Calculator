@@ -6,23 +6,26 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h2 class="mb-4">Result Report:</h2>
+            <h2 class="mb-4 text-success">Result Report:</h2>
             <hr>
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6">
-            <h4>Input Keys:</h4>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <h4 class="text-secondary"> User Input :</h4>
             {% if context.user_input %}
             <ul class="list-group">
                 {% for key, value in context.user_input.items %}
-                    <li class="list-group-item">{{ key }} = {{ value }}</li>
+                    <li class="list-group-item">
+                        <span class=" float-start ps-2"> <b> {{ key | capfirst }} </b> </span> <b> = </b> <span> {{ value | capfirst }} </span>
+                    </li>
                 {% endfor %}
-            </ul>
+            </ul>   
             {% endif %}
         </div>
         <div class="col-md-6">
-            <h4>Result:</h4>
+            <h4 class="text-success">Result:</h4>
             <p class="lead">{{ context.output }}</p>
         </div>
     </div>
